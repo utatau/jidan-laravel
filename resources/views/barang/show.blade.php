@@ -8,10 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100">
-
-    <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md border">
-        <h1 class="text-2xl font-bold text-gray-800 mb-4">Detail Barang</h1>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="max-w-xl w-full p-6 bg-white rounded-lg shadow-md border">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4 text-center">Detail Barang</h1>
 
         <p class="mb-2">
             <span class="font-semibold text-gray-700">Jenis Barang:</span>
@@ -31,11 +30,6 @@
         <p class="mb-2">
             <span class="font-semibold text-gray-700">Nomor Ruangan:</span>
             <span class="text-gray-900">{{ $data->lantai->nomor_ruangan ?? 'Nomor ruangan tidak tersedia' }}</span>
-        </p>
-
-        <p>
-            <span class="font-semibold text-gray-700">Token:</span>
-            <span class="text-gray-900">{{ $data->token }}</span>
         </p>
     </div>
 </body>
