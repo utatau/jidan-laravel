@@ -17,21 +17,25 @@ class Scan extends Controller
         $data = Total::all();
         return view('barang.index', compact('data'));
     }
-    public function scan(Request $request)
-    {
-        $token = $request->query('token');
+	public function scan(Request $request)
+{
+    $token = $request->query('token');
 
-        $keberadaan = Keberadaan::where('token', $token)->first();
+    $keberadaan = Keberadaan::where('token', $token)->first();
 
-        if (!$keberadaan) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Token tidak ditemukan.'
-            ], 404);
-        }
-
-        return redirect()->route('barang.show', ['id' => $keberadaan->id]);
+    if (!$keberadaan) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Token tidak ditemukan.'
+        ], 404);
     }
+
+    // Redirect dengan menyertakan token
+    return redirect()->route('barang.show', [
+        'id' => $keberadaan->id,
+        'token' => $token
+    ]);
+}
 
     /**
      * Show the form for creating a new resource.
