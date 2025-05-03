@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Barang;
 use App\Http\Controllers\Scan;
 use Illuminate\Support\Facades\Route;
 
@@ -17,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/barang', [Scan::class, 'index']);
+Route::get('/scan', [Scan::class, 'scan']);
+Route::get('/barang/{id}', [Barang::class, 'show'])->name('barang.show');

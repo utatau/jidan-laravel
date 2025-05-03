@@ -4,4 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Total extends Controller {}
+class Total extends Controller
+{
+    //
+}
