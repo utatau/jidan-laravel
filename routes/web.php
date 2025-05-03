@@ -18,5 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/scan', [Scan::class, 'scan']);
+Route::get('/barang/scan', [Scan::class, 'scan']);
 Route::get('/barang/{id}', [Barang::class, 'show'])->name('barang.show');

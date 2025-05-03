@@ -9,8 +9,7 @@ class Barang extends Controller
 {
     public function show($id)
     {
-        $data = Keberadaan::findOrFail($id);
-
+        $data = Keberadaan::with('lantai')->findOrFail($id);
         return view('barang.show', compact('data'));
     }
 }
